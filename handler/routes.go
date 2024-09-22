@@ -821,7 +821,7 @@ func RemoveClient(db store.IStore) echo.HandlerFunc {
 			return c.JSON(http.StatusInternalServerError, jsonHTTPResponse{false, "Cannot delete client from database"})
 		}
 
-		log.Infof("Removed wireguard client: %v", client.Name)
+		log.Infof("Removed wireguard client: %v", client.ID)
 		return c.JSON(http.StatusOK, jsonHTTPResponse{true, "Client removed"})
 	}
 }
