@@ -885,7 +885,7 @@ func WireGuardServerKeyPair(db store.IStore) echo.HandlerFunc {
 		if err := db.SaveServerKeyPair(serverKeyPair); err != nil {
 			return c.JSON(http.StatusInternalServerError, jsonHTTPResponse{false, "Cannot generate Wireguard key pair"})
 		}
-		log.Infof("Updated wireguard server interfaces settings: %v", serverKeyPair)
+		log.Infof("Updated wireguard server keypairs")
 
 		return c.JSON(http.StatusOK, serverKeyPair)
 	}
