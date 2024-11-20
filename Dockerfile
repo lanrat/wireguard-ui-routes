@@ -72,9 +72,7 @@ RUN mkdir -p db
 
 # Copy binary files
 COPY --from=builder --chown=wgui:wgui /build/wg-ui .
-RUN chmod +x wg-ui
 COPY init.sh .
-RUN chmod +x init.sh
 
 EXPOSE 5000/tcp
 ENTRYPOINT ["./init.sh"]
