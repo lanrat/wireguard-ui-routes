@@ -46,6 +46,9 @@ RUN mkdir -p assets/plugins && \
     /build/node_modules/jquery-tags-input/ \
     assets/plugins/
 
+# install go deps
+RUN go mod download
+
 # Add sources
 COPY . /build
 
